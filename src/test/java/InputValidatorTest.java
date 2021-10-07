@@ -104,6 +104,16 @@ class InputValidatorTest {
          *  Test the method with pence - p sign at the end of the input
          * */
         assertTrue(inputValidator.isValidInput("0000123234.44p"));
+
+        /*
+         *  Test the method with pence - P ( Capital Character) sign at the end of the input
+         * */
+        assertTrue(inputValidator.isValidInput("0000123234.44P"));
+
+        /*
+         *  Test the method with pound - £ sign at the beginning of the input
+         * */
+        assertTrue(inputValidator.isValidInput("£0000123234.44"));
     }
 
 }
