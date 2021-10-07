@@ -26,5 +26,16 @@ class InputFormatterTest {
         } else {
             fail("Invalid input");
         }
+
+        /*
+         *   Test method with big valid string which will exceed the limit of long data type
+         * */
+         mockInput = "231787389229938939873983787";
+         expectedResult = 0;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
     }
 }
