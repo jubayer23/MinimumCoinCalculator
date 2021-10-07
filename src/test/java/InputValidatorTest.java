@@ -20,5 +20,10 @@ class InputValidatorTest {
          * */
         assertFalse(inputValidator.isValidInput(""));
 
+        /*
+         *  Test the method with alphabet only input
+         * */
+        assertFalse(inputValidator.isValidInput("abc"));
+
     }
 }
