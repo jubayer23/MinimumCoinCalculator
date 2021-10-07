@@ -2,7 +2,7 @@ import java.util.regex.Pattern;
 
 public class InputValidator {
 
-    private final String input_regex = "[0-9]*";
+    private final String input_regex = "[0-9]*\\.?[0-9]*";
 
     public boolean isValidInput(String input) {
 
