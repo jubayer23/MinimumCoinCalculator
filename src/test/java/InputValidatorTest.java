@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class InputValidatorTest {
 
@@ -81,4 +82,18 @@ class InputValidatorTest {
          * */
         assertFalse(inputValidator.isValidInput("-12"));
     }
+
+    @Test
+    public void returnTrueWhenInputStringValid() {
+        /*
+         *  Test the method with int input
+         * */
+        assertTrue(inputValidator.isValidInput("123"));
+
+        /*
+         *  Test the method with decimal input
+         * */
+        assertTrue(inputValidator.isValidInput("123234.44"));
+    }
+
 }
