@@ -94,6 +94,16 @@ class InputValidatorTest {
          *  Test the method with decimal input
          * */
         assertTrue(inputValidator.isValidInput("123234.44"));
+
+        /*
+         *  Test the method with decimal input with leading zeros
+         * */
+        assertTrue(inputValidator.isValidInput("0000123234.44"));
+
+        /*
+         *  Test the method with pence - p sign at the end of the input
+         * */
+        assertTrue(inputValidator.isValidInput("0000123234.44p"));
     }
 
 }
