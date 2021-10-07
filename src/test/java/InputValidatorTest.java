@@ -114,6 +114,27 @@ class InputValidatorTest {
          *  Test the method with pound - £ sign at the beginning of the input
          * */
         assertTrue(inputValidator.isValidInput("£0000123234.44"));
+
+        /*
+         *  Test the method with pound - £ sign at the beginning of the input and
+         *  pence - p sign at the end of the input
+         * */
+        assertTrue(inputValidator.isValidInput("£0000123234.44p"));
+
+        /*
+         *  Test the method with missing pence, Decimal point present
+         * */
+        assertTrue(inputValidator.isValidInput("£1.p"));
+
+        /*
+         *  Test the method with missing pence
+         * */
+        assertTrue(inputValidator.isValidInput("£1p"));
+
+        /*
+         *  Test the method with Buffered zeroes
+         * */
+        assertTrue(inputValidator.isValidInput("001.61p"));
     }
 
 }
