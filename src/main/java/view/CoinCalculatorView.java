@@ -12,7 +12,7 @@ public class CoinCalculatorView extends BaseView {
     public static final String TERMINATE_PROGRAM = "exit";
 
     /*
-    *  A method to read user input and verify whether this inputted data is valid or invalid.
+    *  A method to read user input (Amount) and verify whether this inputted data is valid or invalid.
     * */
     public String showUserInput(InputValidator inputValidator) {
 
