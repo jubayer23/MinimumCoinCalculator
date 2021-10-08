@@ -5,6 +5,9 @@ import view.Utils.InputValidator;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/*
+ *  A class to test inputValidator class which is responsible for checking whether user input data is valid or invalid.
+ * */
 class InputValidatorTest {
 
     private InputValidator inputValidator;

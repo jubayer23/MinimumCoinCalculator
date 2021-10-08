@@ -5,6 +5,9 @@ import view.Utils.InputValidator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/*
+ *  A class to test format method which is responsible for converting user input data amount to Pence value.
+ * */
 class InputFormatterTest {
 
     private InputFormatter inputFormatter;
