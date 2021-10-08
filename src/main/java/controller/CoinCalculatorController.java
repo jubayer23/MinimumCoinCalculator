@@ -14,30 +14,34 @@ public class CoinCalculatorController {
     private final InputFormatter inputFormatter;
     private final Amount model;
 
-    public CoinCalculatorController(CoinCalculatorView view){
+    public CoinCalculatorController(CoinCalculatorView view) {
         this.view = view;
         inputValidator = new InputValidator();
         inputFormatter = new InputFormatter();
         model = new Amount();
     }
 
-    public void takeUserInput(UserStringInputCallBack callBack){
+    public void takeUserInput(UserStringInputCallBack callBack) {
 
 
-        String validInput =   view.showUserInput(inputValidator);
+        String validInput = view.showUserInput(inputValidator);
         callBack.gotStringInput(validInput);
 
     }
 
 
-    public void CalculateDenominationsOfAmount(String input){
+    /*
+     *  A method to get solution of minimum coins combination from the model class and
+     * send the result to the view.
+     * */
+    public void CalculateDenominationsOfAmount(String input) {
         long formattedValue = inputFormatter.formatUserValidInput(input);
 
         model.setRawAmount(input);
         model.setFormattedAmount(formattedValue);
 
 
-        view.print( "Denominations: " + model.CalculateMinCoinDenominations());
+        view.print("Denominations: " + model.CalculateMinCoinDenominations());
 
     }
 
