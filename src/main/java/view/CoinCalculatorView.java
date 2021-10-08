@@ -27,10 +27,13 @@ public class CoinCalculatorView extends BaseView {
 
             userInput = in.nextLine();
 
-            if (!inputValidator.isValidInput(userInput) && !userInput.equalsIgnoreCase(TERMINATE_PROGRAM)) {
-                print("Invalid input! Please provide valid input!");
+            if (inputValidator.isValidInput(userInput) || userInput.equalsIgnoreCase(TERMINATE_PROGRAM)) {
+
+                continueLoopForUserInput = false;
+            } else if(!inputValidator.isValidInput(userInput)){
                 continueLoopForUserInput = true;
-            } else if (!userInput.equalsIgnoreCase(TERMINATE_PROGRAM) && inputFormatter.formatUserValidInput(userInput) == 0) {
+                print("Invalid input! Please provide valid input!");
+            }else if (inputFormatter.formatUserValidInput(userInput) == 0) {
                 print("Invalid Input! Limit exceed!");
                 continueLoopForUserInput = true;
             } else continueLoopForUserInput = false;
