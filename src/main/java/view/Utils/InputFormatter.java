@@ -1,3 +1,5 @@
+package view.Utils;
+
 public class InputFormatter {
 
     /*
