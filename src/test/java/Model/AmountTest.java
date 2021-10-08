@@ -25,7 +25,7 @@ class AmountTest {
 
 
         amount.setFormattedAmount(formattedValue);
-        assertEquals(expectedResult.replaceAll("\\s+",""), amount.CalculateMinCoinDenominations().replaceAll("\\s+",""));
+        assertEquals(expectedResult.replaceAll("\\s+", ""), amount.CalculateMinCoinDenominations().replaceAll("\\s+", ""));
 
 
     }

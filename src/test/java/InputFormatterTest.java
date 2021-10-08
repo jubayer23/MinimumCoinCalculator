@@ -9,6 +9,7 @@ class InputFormatterTest {
 
     private InputFormatter inputFormatter;
     private InputValidator inputValidator;
+
     @BeforeEach
     void setUp() {
         inputFormatter = new InputFormatter();
@@ -32,8 +33,8 @@ class InputFormatterTest {
         /*
          *   Test method with big valid string which will exceed the limit of long data type
          * */
-         mockInput = "231787389229938939873983787";
-         expectedResult = 0;
+        mockInput = "231787389229938939873983787";
+        expectedResult = 0;
         if (inputValidator.isValidInput(mockInput)) {
             assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
         } else {
