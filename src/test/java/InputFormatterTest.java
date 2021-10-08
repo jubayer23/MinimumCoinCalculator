@@ -37,5 +37,150 @@ class InputFormatterTest {
         } else {
             fail("Invalid input");
         }
+
+        /*
+         *   Test method with Double digit
+         * */
+        mockInput = "75";
+        expectedResult = 75;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Pence symbol
+         * */
+        mockInput = "167p";
+        expectedResult = 167;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Pence symbol single digit
+         * */
+        mockInput = "4p";
+        expectedResult = 4;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Pounds decimal
+         * */
+        mockInput = "1.97";
+        expectedResult = 197;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Pound symbol decimal
+         * */
+        mockInput = "£1.33";
+        expectedResult = 133;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Single digit pound symbol
+         * */
+        mockInput = "£2";
+        expectedResult = 200;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Double digit pound symbol
+         * */
+        mockInput = "£20";
+        expectedResult = 2000;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Pound & pence symbol decimal
+         * */
+        mockInput = "£1.97p";
+        expectedResult = 197;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+
+        /*
+         *   Test method with Missing pence
+         * */
+        mockInput = "£1p";
+        expectedResult = 100;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+
+        /*
+         *   Test method with Missing pence, Decimal point present
+         * */
+        mockInput = "£1.p";
+        expectedResult = 100;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Buffered zeroes
+         * */
+        mockInput = "001.61p";
+        expectedResult = 161;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Rounding with pence symbol
+         * */
+        mockInput = "6.235p";
+        expectedResult = 624;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
+
+        /*
+         *   Test method with Rounding with pound and pence symbols.
+         * */
+        mockInput = "£1.256532677p";
+        expectedResult = 126;
+        if (inputValidator.isValidInput(mockInput)) {
+            assertEquals(expectedResult, inputFormatter.formatUserValidInput(mockInput));
+        } else {
+            fail("Invalid input");
+        }
     }
 }
