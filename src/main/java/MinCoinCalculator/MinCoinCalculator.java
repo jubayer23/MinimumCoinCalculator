@@ -12,6 +12,10 @@ public class MinCoinCalculator {
 
         CoinCalculatorController controller = new CoinCalculatorController(view);
 
+        /*
+        * A infinite loop until user type "exit" in the terminal. The loop continuously scanning
+        * user input and process the input to generate minimum coins combination of a amount.
+        * */
         final boolean[] loopContinue = {true};
         do {
             controller.takeUserInput(inputString -> {

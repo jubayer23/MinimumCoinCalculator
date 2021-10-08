@@ -24,7 +24,7 @@ public class CoinCalculatorController {
     public void takeUserInput(UserStringInputCallBack callBack) {
 
 
-        String validInput = view.showUserInput(inputValidator);
+        String validInput = view.showUserInput(inputValidator,inputFormatter);
         callBack.gotStringInput(validInput);
 
     }
