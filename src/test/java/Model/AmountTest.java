@@ -28,6 +28,17 @@ class AmountTest {
         assertEquals(expectedResult.replaceAll("\\s+", ""), amount.CalculateMinCoinDenominations().replaceAll("\\s+", ""));
 
 
+        /*
+         *   Test method with multiple digit
+         * */
+        // String mockInput = "123p";
+        formattedValue = 61;
+        expectedResult = "1 x 50p, 1 x 10p, 1 x 1p";
+
+
+        amount.setFormattedAmount(formattedValue);
+        assertEquals(expectedResult.replaceAll("\\s+",""), amount.CalculateMinCoinDenominations().replaceAll("\\s+",""));
+
     }
 
 
